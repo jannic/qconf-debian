@@ -22,7 +22,7 @@ override_dh_auto_configure:
 	./configure --prefix=/usr
 
 override_dh_auto_install:
-	dh_auto_install
+	dh_auto_install -- INSTALL_ROOT=$(CURDIR)/debian/qconf
 	mv debian/qconf/usr/bin/qconf debian/qconf/usr/bin/qt-qconf
 
 override_dh_auto_clean:
